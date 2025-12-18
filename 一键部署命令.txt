@@ -1,0 +1,100 @@
+# ============================================
+# 任务平台一键部署命令
+# 复制以下所有命令到服务器执行
+# ============================================
+
+# 1. 进入 /opt 目录
+cd /opt
+
+# 2. 克隆仓库（如果已存在，先删除）
+if [ -d "task-platform" ]; then
+    echo "删除旧目录..."
+    rm -rf task-platform
+fi
+git clone https://github.com/yuewan10000-ops/task-platform.git
+cd task-platform
+
+# 3. 安装后端依赖
+echo "安装后端依赖..."
+cd backend
+npm install
+cd ..
+
+# 4. 安装前端 A-portal 依赖
+echo "安装前端 A-portal 依赖..."
+cd frontend/a-portal
+npm install
+cd ../..
+
+# 5. 安装前端 B-portal 依赖
+echo "安装前端 B-portal 依赖..."
+cd frontend/b-portal
+npm install
+cd ../..
+
+# 6. 配置环境变量
+echo "配置环境变量..."
+cd backend
+if [ ! -f ".env" ]; then
+    cp env.example .env
+    echo "⚠ 请编辑 .env 文件：nano /opt/task-platform/backend/.env"
+    echo "必须配置：DATABASE_URL, JWT_SECRET, ADMIN_LOGIN_PASSWORD, ADMIN_PAY_PASSWORD"
+fi
+cd ..
+
+# 7. 生成 Prisma Client
+echo "生成 Prisma Client..."
+cd backend
+npx prisma generate
+cd ..
+
+# 8. 运行数据库迁移
+echo "运行数据库迁移..."
+cd backend
+npx prisma migrate deploy || npx prisma db push
+cd ..
+
+# 9. 构建后端
+echo "构建后端..."
+cd backend
+npm run build
+cd ..
+
+# 10. 构建前端 A-portal
+echo "构建前端 A-portal..."
+cd frontend/a-portal
+npm run build
+cd ../..
+
+# 11. 构建前端 B-portal
+echo "构建前端 B-portal..."
+cd frontend/b-portal
+npm run build
+cd ../..
+
+# 12. 安装 PM2（如果还没安装）
+echo "检查 PM2..."
+if ! command -v pm2 &> /dev/null; then
+    npm install -g pm2
+fi
+
+# 13. 启动服务
+echo "启动服务..."
+cd backend
+pm2 start dist/server.js --name task-platform-api || pm2 restart task-platform-api
+pm2 save
+pm2 startup
+
+echo ""
+echo "=========================================="
+echo "✅ 部署完成！"
+echo "=========================================="
+echo ""
+echo "下一步："
+echo "1. 编辑环境变量：nano /opt/task-platform/backend/.env"
+echo "2. 配置 Nginx（参考部署指南）"
+echo "3. 访问测试："
+echo "   - A-portal: http://你的服务器IP"
+echo "   - B-portal: http://你的服务器IP:8080"
+echo ""
+
