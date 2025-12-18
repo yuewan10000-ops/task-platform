@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "Language setting",
+    "english": "English",
+    "turkish": "Turkish",
+    "japanese": "日本語",
+    "arabic": "Arabic",
+    "pakistan": "Pakistan",
+    "spanish": "Spanish",
+    "portuguese": "Portuguese",
+    "french": "French",
+    "russian": "Russian"
+  },
+  "login": {
+    "title": "Sign in",
+    "phone": "Phone",
+    "phonePlaceholder": "Phone",
+    "password": "Password",
+    "passwordPlaceholder": "Please enter your password",
+    "button": "Sign in",
+    "signingIn": "Signing in...",
+    "registerAccount": "Register account",
+    "service": "Service",
+    "errorRequired": "Please enter account and password",
+    "errorFailed": "Login failed"
+  },
+  "register": {
+    "title": "Register account",
+    "phone": "Phone",
+    "phonePlaceholder": "Phone",
+    "password": "Password",
+    "passwordPlaceholder": "Password",
+    "paymentPassword": "Payment password",
+    "paymentPasswordPlaceholder": "Payment password",
+    "invitationCode": "Invitation code",
+    "invitationCodePlaceholder": "Invitation code",
+    "button": "Register account",
+    "registering": "Registering...",
+    "errorRequired": "Please fill in all fields",
+    "errorFailed": "Registration failed",
+    "success": "Registration successful, redirecting to login..."
+  },
+  "service": {
+    "title": "Service",
+    "comingSoon": "Service features coming soon"
+  }
+}
+

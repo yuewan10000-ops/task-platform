@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "Configuração de idioma",
+    "english": "Inglês",
+    "turkish": "Turco",
+    "japanese": "Japonês",
+    "arabic": "Árabe",
+    "pakistan": "Paquistão",
+    "spanish": "Espanhol",
+    "portuguese": "Português",
+    "french": "Francês",
+    "russian": "Russo"
+  },
+  "login": {
+    "title": "Entrar",
+    "phone": "Telefone",
+    "phonePlaceholder": "Telefone",
+    "password": "Senha",
+    "passwordPlaceholder": "Por favor, insira sua senha",
+    "button": "Entrar",
+    "signingIn": "Entrando...",
+    "registerAccount": "Registrar conta",
+    "service": "Serviço",
+    "errorRequired": "Por favor, insira conta e senha",
+    "errorFailed": "Falha ao entrar"
+  },
+  "register": {
+    "title": "Registrar conta",
+    "phone": "Telefone",
+    "phonePlaceholder": "Telefone",
+    "password": "Senha",
+    "passwordPlaceholder": "Senha",
+    "paymentPassword": "Senha de pagamento",
+    "paymentPasswordPlaceholder": "Senha de pagamento",
+    "invitationCode": "Código de convite",
+    "invitationCodePlaceholder": "Código de convite",
+    "button": "Registrar conta",
+    "registering": "Registrando...",
+    "errorRequired": "Por favor, preencha todos os campos",
+    "errorFailed": "Falha ao registrar",
+    "success": "Registro bem-sucedido, redirecionando para o login..."
+  },
+  "service": {
+    "title": "Serviço",
+    "comingSoon": "Recursos de serviço em breve"
+  }
+}
+

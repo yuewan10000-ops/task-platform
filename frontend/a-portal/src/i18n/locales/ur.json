@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "زبان کی ترتیب",
+    "english": "انگریزی",
+    "turkish": "ترکی",
+    "japanese": "جاپانی",
+    "arabic": "عربی",
+    "pakistan": "پاکستان",
+    "spanish": "ہسپانوی",
+    "portuguese": "پرتگالی",
+    "french": "فرانسیسی",
+    "russian": "روسی"
+  },
+  "login": {
+    "title": "سائن ان",
+    "phone": "فون",
+    "phonePlaceholder": "فون",
+    "password": "پاس ورڈ",
+    "passwordPlaceholder": "براہ کرم پاس ورڈ درج کریں",
+    "button": "سائن ان",
+    "signingIn": "سائن ان ہو رہا ہے...",
+    "registerAccount": "اکاؤنٹ رجسٹر کریں",
+    "service": "سروس",
+    "errorRequired": "براہ کرم اکاؤنٹ اور پاس ورڈ درج کریں",
+    "errorFailed": "لاگ ان ناکام"
+  },
+  "register": {
+    "title": "اکاؤنٹ رجسٹر کریں",
+    "phone": "فون",
+    "phonePlaceholder": "فون",
+    "password": "پاس ورڈ",
+    "passwordPlaceholder": "پاس ورڈ",
+    "paymentPassword": "ادائیگی کا پاس ورڈ",
+    "paymentPasswordPlaceholder": "ادائیگی کا پاس ورڈ",
+    "invitationCode": "دعوت کا کوڈ",
+    "invitationCodePlaceholder": "دعوت کا کوڈ",
+    "button": "اکاؤنٹ رجسٹر کریں",
+    "registering": "رجسٹریشن ہو رہی ہے...",
+    "errorRequired": "براہ کرم تمام فیلڈز بھریں",
+    "errorFailed": "رجسٹریشن ناکام",
+    "success": "رجسٹریشن کامیاب، لاگ ان صفحے پر ری ڈائریکٹ کیا جا رہا ہے..."
+  },
+  "service": {
+    "title": "سروس",
+    "comingSoon": "سروس کی خصوصیات جلد آ رہی ہیں"
+  }
+}
+

@@ -1,0 +1,192 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Captcha {
+  id        Int      @id @default(autoincrement())
+  sessionId String   @unique(map: "Captcha_sessionId_key")
+  code      String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model OrderRecord {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  orderType   String
+  amount      Decimal  @default(0.000000000000000000000000000000)
+  status      String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], map: "OrderRecord_userId_fkey", onDelete: Cascade)
+
+  @@index([userId], map: "OrderRecord_userId_idx")
+}
+
+model OrderSetting {
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  orderType      String
+  amount         Decimal  @default(0.000000000000000000000000000000)
+  status         String   @default("pending")
+  description    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  maxOrders      Int      @default(0)
+  commissionRate Decimal  @default(0.000000000000000000000000000000)
+  user           User     @relation(fields: [userId], references: [id], map: "OrderSetting_userId_fkey", onDelete: Cascade)
+
+  @@index([userId], map: "OrderSetting_userId_idx")
+}
+
+model RechargeConfig {
+  id           Int      @id @default(autoincrement())
+  trc20Address String?
+  trxAddress   String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model CommissionRate {
+  id          Int      @id @default(autoincrement())
+  rate        Decimal  @default(0.000000000000000000000000000000) // 佣金比例，1 = 100%
+  isActive    Boolean  @default(true) // 是否启用
+  description String?  // 描述
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ProductPriceConfig {
+  id          Int      @id @default(autoincrement())
+  minRate     Decimal  @default(0.290000000000000000000000000000) // 最小价格比例（0.29表示29%）
+  maxRate     Decimal  @default(0.600000000000000000000000000000) // 最大价格比例（0.60表示60%）
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String   // 商品名称
+  description String?  // 商品描述
+  image       String?  @db.LongText // 商品图片（base64）
+  isActive    Boolean  @default(true) // 是否启用
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model RechargeRequest {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  amount       Decimal  @default(0.000000000000000000000000000000)
+  status       String   @default("pending")
+  note         String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  voucherImage String?  @db.LongText
+  createdBySubUserId Int? // 创建该充值记录的子用户ID（B端子用户操作时记录）
+  user         User     @relation(fields: [userId], references: [id], map: "RechargeRequest_userId_fkey", onDelete: Cascade)
+
+  @@index([userId], map: "RechargeRequest_userId_idx")
+  @@index([createdBySubUserId], map: "RechargeRequest_createdBySubUserId_idx")
+}
+
+model WithdrawRequest {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  amount        Decimal  @default(0.000000000000000000000000000000)
+  status        String   @default("pending")
+  note          String?
+  walletAddress String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  processedBySubUserId Int? // 处理该取款记录的子用户ID（B端子用户操作时记录）
+  user          User     @relation(fields: [userId], references: [id], map: "WithdrawRequest_userId_fkey", onDelete: Cascade)
+
+  @@index([userId], map: "WithdrawRequest_userId_idx")
+  @@index([processedBySubUserId], map: "WithdrawRequest_processedBySubUserId_idx")
+}
+
+model User {
+  id                Int               @id @default(autoincrement())
+  email             String?           @unique(map: "User_email_key")
+  name              String?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  account           String            @unique(map: "User_account_key")
+  inviteCode        String
+  loginPasswordHash String
+  payPasswordHash   String
+  isActive          Boolean           @default(true)
+  isOnline          Boolean           @default(false)
+  lastLoginAt       DateTime?         @db.DateTime(0)
+  myInviteCode      String?           @unique(map: "User_myInviteCode_key")
+  parentId          Int?
+  walletAddress     String?
+  balance           Decimal           @default(0.000000000000000000000000000000)
+  remark            String?           // 备注（仅B端使用）
+  isSubUser         Boolean           @default(false) // 是否为子用户（B端子用户）
+  parentAdminId     Int?              // 所属的admin用户ID（子用户专用）
+  managedBySubUserId Int?             // 管理该会员的子用户ID（子用户专用，表示该会员由哪个子用户管理）
+  orderRecords      OrderRecord[]
+  orderSettings     OrderSetting[]
+  rechargeRequests  RechargeRequest[]
+  withdrawRequests  WithdrawRequest[]
+  injectionPlans    InjectionPlan[]
+  parent            User?             @relation("UserHierarchy", fields: [parentId], references: [id], map: "User_parentId_fkey", onDelete: SetNull)
+  children          User[]            @relation("UserHierarchy")
+  supportConversationsAsUser    SupportConversation[] @relation("UserSupportConversations")
+  supportConversationsAsService SupportConversation[] @relation("ServiceSupportConversations")
+
+  @@index([parentAdminId], map: "User_parentAdminId_idx")
+
+  @@index([parentId], map: "User_parentId_fkey")
+}
+
+model InjectionPlan {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  orderSettingId  Int?     // 关联的订单设置ID（固定某个订单）
+  commissionRate  Decimal  @default(0.000000000000000000000000000000) // 订单佣金
+  injectionAmount Decimal  @default(0.000000000000000000000000000000) // 打针全额
+  isActive        Boolean  @default(true) // 是否启用
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id], map: "InjectionPlan_userId_fkey", onDelete: Cascade)
+
+  @@index([userId], map: "InjectionPlan_userId_idx")
+}
+
+/// 客服会话（用户与后台客服的一对一会话）
+model SupportConversation {
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  serviceId  Int?      // 接待的客服管理员用户，可为空表示未分配
+  status     String    @default("open") // open / closed
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  user       User      @relation("UserSupportConversations", fields: [userId], references: [id], onDelete: Cascade)
+  service    User?     @relation("ServiceSupportConversations", fields: [serviceId], references: [id], onDelete: SetNull)
+  messages   SupportMessage[]
+
+  @@index([userId])
+  @@index([serviceId])
+}
+
+/// 客服消息
+model SupportMessage {
+  id               Int                 @id @default(autoincrement())
+  conversationId   Int
+  senderType       String              // 'user' | 'service'
+  senderId         Int                 // 对应 User.id
+  content          String              @db.LongText
+  isRead           Boolean             @default(false)
+  createdAt        DateTime            @default(now())
+  conversation     SupportConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId])
+}

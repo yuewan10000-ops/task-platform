@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "Configuración de idioma",
+    "english": "Inglés",
+    "turkish": "Turco",
+    "japanese": "Japonés",
+    "arabic": "Árabe",
+    "pakistan": "Pakistán",
+    "spanish": "Español",
+    "portuguese": "Portugués",
+    "french": "Francés",
+    "russian": "Ruso"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "phone": "Teléfono",
+    "phonePlaceholder": "Teléfono",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Por favor ingrese su contraseña",
+    "button": "Iniciar sesión",
+    "signingIn": "Iniciando sesión...",
+    "registerAccount": "Registrar cuenta",
+    "service": "Servicio",
+    "errorRequired": "Por favor ingrese cuenta y contraseña",
+    "errorFailed": "Error al iniciar sesión"
+  },
+  "register": {
+    "title": "Registrar cuenta",
+    "phone": "Teléfono",
+    "phonePlaceholder": "Teléfono",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Contraseña",
+    "paymentPassword": "Contraseña de pago",
+    "paymentPasswordPlaceholder": "Contraseña de pago",
+    "invitationCode": "Código de invitación",
+    "invitationCodePlaceholder": "Código de invitación",
+    "button": "Registrar cuenta",
+    "registering": "Registrando...",
+    "errorRequired": "Por favor complete todos los campos",
+    "errorFailed": "Error al registrar",
+    "success": "Registro exitoso, redirigiendo al inicio de sesión..."
+  },
+  "service": {
+    "title": "Servicio",
+    "comingSoon": "Funciones de servicio próximamente"
+  }
+}
+

@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "言語設定",
+    "english": "英語",
+    "turkish": "トルコ語",
+    "japanese": "日本語",
+    "arabic": "アラビア語",
+    "pakistan": "パキスタン",
+    "spanish": "スペイン語",
+    "portuguese": "ポルトガル語",
+    "french": "フランス語",
+    "russian": "ロシア語"
+  },
+  "login": {
+    "title": "サインイン",
+    "phone": "電話番号",
+    "phonePlaceholder": "電話番号",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワードを入力してください",
+    "button": "サインイン",
+    "signingIn": "サインイン中...",
+    "registerAccount": "アカウント登録",
+    "service": "サービス",
+    "errorRequired": "アカウントとパスワードを入力してください",
+    "errorFailed": "ログインに失敗しました"
+  },
+  "register": {
+    "title": "アカウント登録",
+    "phone": "電話番号",
+    "phonePlaceholder": "電話番号",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワード",
+    "paymentPassword": "支払いパスワード",
+    "paymentPasswordPlaceholder": "支払いパスワード",
+    "invitationCode": "招待コード",
+    "invitationCodePlaceholder": "招待コード",
+    "button": "アカウント登録",
+    "registering": "登録中...",
+    "errorRequired": "すべての項目を入力してください",
+    "errorFailed": "登録に失敗しました",
+    "success": "登録成功、ログインページにリダイレクトしています..."
+  },
+  "service": {
+    "title": "サービス",
+    "comingSoon": "サービス機能は近日公開予定です"
+  }
+}
+

@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc -p .",
+    "start": "node dist/server.js",
+    "lint": "echo \"no lint configured\"",
+    "test": "vitest run",
+    "init-admin": "node src/scripts/initAdmin.js",
+    "migrate-online": "node src/scripts/migrateOnlineStatus.js",
+    "migrate-invite": "node src/scripts/migrateInviteCode.js",
+    "migrate-wallet": "node src/scripts/migrateWalletAddress.js",
+    "migrate-balance": "node src/scripts/migrateBalance.js",
+    "migrate-orders": "node src/scripts/migrateOrders.js",
+    "create-test-user": "node src/scripts/createTestUser.js",
+    "reset-test-commission": "node dist/scripts/resetTestCommission.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/adapter-mariadb": "^7.1.0",
+    "@prisma/client": "^7.1.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mysql2": "^3.15.3",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.9.0",
+    "prisma": "^7.1.0",
+    "supertest": "^7.1.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  }
+}

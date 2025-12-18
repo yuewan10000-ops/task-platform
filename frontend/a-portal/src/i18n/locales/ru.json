@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "Настройки языка",
+    "english": "Английский",
+    "turkish": "Турецкий",
+    "japanese": "Японский",
+    "arabic": "Арабский",
+    "pakistan": "Пакистан",
+    "spanish": "Испанский",
+    "portuguese": "Португальский",
+    "french": "Французский",
+    "russian": "Русский"
+  },
+  "login": {
+    "title": "Войти",
+    "phone": "Телефон",
+    "phonePlaceholder": "Телефон",
+    "password": "Пароль",
+    "passwordPlaceholder": "Пожалуйста, введите пароль",
+    "button": "Войти",
+    "signingIn": "Вход...",
+    "registerAccount": "Зарегистрироваться",
+    "service": "Сервис",
+    "errorRequired": "Пожалуйста, введите учетную запись и пароль",
+    "errorFailed": "Ошибка входа"
+  },
+  "register": {
+    "title": "Зарегистрироваться",
+    "phone": "Телефон",
+    "phonePlaceholder": "Телефон",
+    "password": "Пароль",
+    "passwordPlaceholder": "Пароль",
+    "paymentPassword": "Пароль для оплаты",
+    "paymentPasswordPlaceholder": "Пароль для оплаты",
+    "invitationCode": "Код приглашения",
+    "invitationCodePlaceholder": "Код приглашения",
+    "button": "Зарегистрироваться",
+    "registering": "Регистрация...",
+    "errorRequired": "Пожалуйста, заполните все поля",
+    "errorFailed": "Ошибка регистрации",
+    "success": "Регистрация успешна, перенаправление на страницу входа..."
+  },
+  "service": {
+    "title": "Сервис",
+    "comingSoon": "Функции сервиса скоро"
+  }
+}
+

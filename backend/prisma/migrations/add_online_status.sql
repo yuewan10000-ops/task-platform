@@ -1,0 +1,4 @@
+-- 添加用户在线状态字段
+ALTER TABLE `User` ADD COLUMN `isOnline` BOOLEAN NOT NULL DEFAULT false;
+ALTER TABLE `User` ADD COLUMN `lastLoginAt` DATETIME NULL;
+

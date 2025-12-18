@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "Paramètres de langue",
+    "english": "Anglais",
+    "turkish": "Turc",
+    "japanese": "Japonais",
+    "arabic": "Arabe",
+    "pakistan": "Pakistan",
+    "spanish": "Espagnol",
+    "portuguese": "Portugais",
+    "french": "Français",
+    "russian": "Russe"
+  },
+  "login": {
+    "title": "Se connecter",
+    "phone": "Téléphone",
+    "phonePlaceholder": "Téléphone",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Veuillez entrer votre mot de passe",
+    "button": "Se connecter",
+    "signingIn": "Connexion en cours...",
+    "registerAccount": "Créer un compte",
+    "service": "Service",
+    "errorRequired": "Veuillez entrer le compte et le mot de passe",
+    "errorFailed": "Échec de la connexion"
+  },
+  "register": {
+    "title": "Créer un compte",
+    "phone": "Téléphone",
+    "phonePlaceholder": "Téléphone",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Mot de passe",
+    "paymentPassword": "Mot de passe de paiement",
+    "paymentPasswordPlaceholder": "Mot de passe de paiement",
+    "invitationCode": "Code d'invitation",
+    "invitationCodePlaceholder": "Code d'invitation",
+    "button": "Créer un compte",
+    "registering": "Inscription en cours...",
+    "errorRequired": "Veuillez remplir tous les champs",
+    "errorFailed": "Échec de l'inscription",
+    "success": "Inscription réussie, redirection vers la connexion..."
+  },
+  "service": {
+    "title": "Service",
+    "comingSoon": "Fonctionnalités de service à venir"
+  }
+}
+

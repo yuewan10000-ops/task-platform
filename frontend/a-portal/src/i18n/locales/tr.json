@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "Dil ayarı",
+    "english": "İngilizce",
+    "turkish": "Türkçe",
+    "japanese": "Japonca",
+    "arabic": "Arapça",
+    "pakistan": "Pakistan",
+    "spanish": "İspanyolca",
+    "portuguese": "Portekizce",
+    "french": "Fransızca",
+    "russian": "Rusça"
+  },
+  "login": {
+    "title": "Giriş yap",
+    "phone": "Telefon",
+    "phonePlaceholder": "Telefon",
+    "password": "Şifre",
+    "passwordPlaceholder": "Lütfen şifrenizi girin",
+    "button": "Giriş yap",
+    "signingIn": "Giriş yapılıyor...",
+    "registerAccount": "Hesap oluştur",
+    "service": "Hizmet",
+    "errorRequired": "Lütfen hesap ve şifre girin",
+    "errorFailed": "Giriş başarısız"
+  },
+  "register": {
+    "title": "Hesap oluştur",
+    "phone": "Telefon",
+    "phonePlaceholder": "Telefon",
+    "password": "Şifre",
+    "passwordPlaceholder": "Şifre",
+    "paymentPassword": "Ödeme şifresi",
+    "paymentPasswordPlaceholder": "Ödeme şifresi",
+    "invitationCode": "Davet kodu",
+    "invitationCodePlaceholder": "Davet kodu",
+    "button": "Hesap oluştur",
+    "registering": "Kayıt yapılıyor...",
+    "errorRequired": "Lütfen tüm alanları doldurun",
+    "errorFailed": "Kayıt başarısız",
+    "success": "Kayıt başarılı, giriş sayfasına yönlendiriliyor..."
+  },
+  "service": {
+    "title": "Hizmet",
+    "comingSoon": "Hizmet özellikleri yakında gelecek"
+  }
+}
+

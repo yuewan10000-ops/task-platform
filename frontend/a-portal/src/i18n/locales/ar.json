@@ -1,0 +1,48 @@
+{
+  "lang": {
+    "setting": "إعدادات اللغة",
+    "english": "الإنجليزية",
+    "turkish": "التركية",
+    "japanese": "اليابانية",
+    "arabic": "العربية",
+    "pakistan": "باكستان",
+    "spanish": "الإسبانية",
+    "portuguese": "البرتغالية",
+    "french": "الفرنسية",
+    "russian": "الروسية"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "phone": "الهاتف",
+    "phonePlaceholder": "الهاتف",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "يرجى إدخال كلمة المرور",
+    "button": "تسجيل الدخول",
+    "signingIn": "جارٍ تسجيل الدخول...",
+    "registerAccount": "إنشاء حساب",
+    "service": "الخدمة",
+    "errorRequired": "يرجى إدخال الحساب وكلمة المرور",
+    "errorFailed": "فشل تسجيل الدخول"
+  },
+  "register": {
+    "title": "إنشاء حساب",
+    "phone": "الهاتف",
+    "phonePlaceholder": "الهاتف",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "كلمة المرور",
+    "paymentPassword": "كلمة مرور الدفع",
+    "paymentPasswordPlaceholder": "كلمة مرور الدفع",
+    "invitationCode": "رمز الدعوة",
+    "invitationCodePlaceholder": "رمز الدعوة",
+    "button": "إنشاء حساب",
+    "registering": "جارٍ التسجيل...",
+    "errorRequired": "يرجى ملء جميع الحقول",
+    "errorFailed": "فشل التسجيل",
+    "success": "تم التسجيل بنجاح، جارٍ إعادة التوجيه إلى صفحة تسجيل الدخول..."
+  },
+  "service": {
+    "title": "الخدمة",
+    "comingSoon": "ميزات الخدمة قريباً"
+  }
+}
+
